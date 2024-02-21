@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Toastify CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Jquery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+    <!-- Include Flatpickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- Include Flatpickr JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+    <!-- Main Links -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./js/index.js" defer></script>
+    <script src="./js/auth.js" defer></script>
+
+    <title>News Dashboard</title>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="sidebar">
+            <div class="user-content">
+                <img src="./assets/images/user.jpg" alt="">
+                <h3>Vəfa Şükürova</h3>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-items">
+                    <li class="nav-link active"><i class="fa-solid fa-house"></i><a href="./index.html">Ana Səhifə</a>
+                    </li>
+                    <li class="nav-link"><i class="fa-solid fa-list"></i><a href="./categories.html">Kateqoriyalar</a>
+                    </li>
+                    <li class="nav-link"><i class="fa-solid fa-user"></i><a href="./auth.html">Müəlliflər</a></li>
+                    <li class="nav-link"><i class="fa-solid fa-newspaper"></i><a href="./news.html">Xəbərlər</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="right-side">
+            <header class="head">
+                <h1>Admin Panel</h1>
+                <div class="search-input"><input type="text" name="search" placeholder="Axtarış üçün söz yazın"><i
+                        class="fa-solid fa-magnifying-glass"></i></div>
+                <div class="sign-out"><i class="fa-solid fa-right-from-bracket"></i><a href="">Çıxış</a></div>
+            </header>
+
+            <div id="authP-content">
+                <table class="responsive-table">
+                    <thead>
+                        <tr class="table-header d-flex justify-content-between">
+                            <th class="column">#</th>
+                            <th class="column ">Adı</th>
+                            <th class="column ">Soyadı</th>
+                            <th class="column ">Elmi dərəcə</th>
+                            <th class="column ">Doğum tarixi</th>
+                            <th class="column"><button class="add-auth" data-toggle="modal" data-target="#auth-modal"><i
+                                        class="fa-solid fa-plus"></i><span>Yeni
+                                        Müəllif</span></button></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+
+        <div class="modal fade" id="auth-modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Müəllif əlavə et!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group d-flex flex-column">
+                            <label class="mb-3" for="name">Adı</label>
+                            <input type="text" name="name" class="form-control" id="name">
+                        </div>
+                        <div class="form-group d-flex flex-column">
+                            <label class="mb-3" for="surname">Soyadı</label>
+                            <input type="text" name="surname" class="form-control" id="surname">
+                        </div>
+                        <div class="form-group d-flex flex-column">
+                            <label class="mb-3" for="degree">Elmi Dərəcə</label>
+                            <input type="text" name="degree" class="form-control" id="degree">
+                        </div>
+                        <div class="form-group d-flex flex-column">
+                            <label class="mb-3" for="birthday">Doğum tarixi</label>
+                            <input type="date" name="birthday" class="form-control" id="birthday">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-add" data-dismiss="modal">Əlavə et</button>
+                        <button type="button" class="btn btn-delete" data-toggle="modal" data-target="#auth-modal
+                    ">Ləğv et</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="edit-modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Müəllif əlavə et!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group d-flex flex-column">
+                            <label class="mb-3" for="name">Adı</label>
+                            <input type="text" name="name" class="form-control" id="name">
+                        </div>
+                        <div class="form-group d-flex flex-column">
+                            <label class="mb-3" for="surname">Soyadı</label>
+                            <input type="text" name="surname" class="form-control" id="surname">
+                        </div>
+                        <div class="form-group d-flex flex-column">
+                            <label class="mb-3" for="degree">Elmi Dərəcə</label>
+                            <input type="text" name="degree" class="form-control" id="degree">
+                        </div>
+                        <div class="form-group d-flex flex-column">
+                            <label class="mb-3" for="birthday">Doğum tarixi</label>
+                            <input type="date" name="birthday" class="form-control" id="birthday">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-add" data-dismiss="modal">Yadda saxla</button>
+                        <button type="button" class="btn btn-delete" data-toggle="modal" data-target="#edit-modal">Ləğv
+                            et</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
